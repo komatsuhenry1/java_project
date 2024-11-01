@@ -1,5 +1,5 @@
 Implementação no Portal Azure
-Para configurar o ambiente necessário, utilize os seguintes comandos no Azure Cloud Shell:
+Para configurar o ambiente necessário, utilize os seguintes comandos no Azure Cloud Shell.
 
 Definição de Variáveis
 bash
@@ -15,8 +15,10 @@ bash
 Copiar código
 # Criação de um novo grupo de recursos
 az group create --name $rg --location $location &&
+
 # Criação de um Plano de Serviço para o App
 az appservice plan create -n $appServicePlanName --location $location -g $rg --sku $sku &&
+
 # Criação do Serviço de Aplicativo
 az webapp create -g $rg -p $appServicePlanName --runtime "JAVA:17" -n $webAppName
 Conexão com o Banco de Dados
@@ -24,6 +26,7 @@ Utilizaremos um banco de dados em nuvem. Certifique-se de alterar as credenciais
 
 properties
 Copiar código
+# Configurações do Banco de Dados
 spring.datasource.url=jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
 spring.datasource.username={username}
 spring.datasource.password={password}
@@ -37,11 +40,11 @@ Para configurar o banco de dados, execute os seguintes comandos para criar e con
 Comandos DDL
 sql
 Copiar código
--- Apagar tabelas existentes
-DROP TABLE tb_consultas;
-DROP TABLE tb_medicos;
-DROP TABLE tb_paciente;
-DROP TABLE tb_endereco;
+-- Apagar tabelas existentes, caso necessário
+DROP TABLE IF EXISTS tb_consultas;
+DROP TABLE IF EXISTS tb_medicos;
+DROP TABLE IF EXISTS tb_paciente;
+DROP TABLE IF EXISTS tb_endereco;
 
 -- Criação das tabelas
 CREATE TABLE tb_endereco (
