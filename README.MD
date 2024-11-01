@@ -1,32 +1,33 @@
-Implementação no Portal Azure
+# Implementação no Portal Azure
 Para configurar o ambiente necessário, utilize os seguintes comandos no Azure Cloud Shell.
 
-Definição de Variáveis
-bash
-Copiar código
 # Defina as variáveis do script
+```
 rg="rg-sprint-4"
 location="brazilsouth"
 appServicePlanName="sprint4"
 webAppName="sprint4-rm550684"
 sku="F1"
-Criação dos Recursos no Azure
-bash
-Copiar código
+```
 # Criação de um novo grupo de recursos
+```
 az group create --name $rg --location $location &&
+```
 
 # Criação de um Plano de Serviço para o App
+```
 az appservice plan create -n $appServicePlanName --location $location -g $rg --sku $sku &&
+```
 
 # Criação do Serviço de Aplicativo
+```
 az webapp create -g $rg -p $appServicePlanName --runtime "JAVA:17" -n $webAppName
 Conexão com o Banco de Dados
 Utilizaremos um banco de dados em nuvem. Certifique-se de alterar as credenciais de conexão conforme necessário.
+```
 
-properties
-Copiar código
 # Configurações do Banco de Dados
+```
 spring.datasource.url=jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
 spring.datasource.username={username}
 spring.datasource.password={password}
@@ -36,10 +37,9 @@ spring.jpa.hibernate.ddl-auto=none
 spring.jpa.show-sql=true
 Scripts SQL
 Para configurar o banco de dados, execute os seguintes comandos para criar e configurar as tabelas. A inserção de dados será realizada através da versão web da aplicação.
-
-Comandos DDL
-sql
-Copiar código
+```
+# Comandos DDL
+```
 -- Apagar tabelas existentes, caso necessário
 DROP TABLE IF EXISTS tb_consultas;
 DROP TABLE IF EXISTS tb_medicos;
