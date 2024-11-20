@@ -22,7 +22,6 @@ az appservice plan create -n $appServicePlanName --location $location -g $rg --s
 # Criação do Serviço de Aplicativo
 ```
 az webapp create -g $rg -p $appServicePlanName --runtime "JAVA:17" -n $webAppName
-Conexão com o Banco de Dados
 ```
 
 # Configurações do Banco de Dados
