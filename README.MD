@@ -23,7 +23,6 @@ az appservice plan create -n $appServicePlanName --location $location -g $rg --s
 ```
 az webapp create -g $rg -p $appServicePlanName --runtime "JAVA:17" -n $webAppName
 Conexão com o Banco de Dados
-Utilizaremos um banco de dados em nuvem. Certifique-se de alterar as credenciais de conexão conforme necessário.
 ```
 
 # Configurações do Banco de Dados
@@ -36,7 +35,6 @@ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 spring.jpa.hibernate.ddl-auto=none
 spring.jpa.show-sql=true
 Scripts SQL
-Para configurar o banco de dados, execute os seguintes comandos para criar e configurar as tabelas. A inserção de dados será realizada através da versão web da aplicação.
 ```
 # Comandos DDL
 ```
