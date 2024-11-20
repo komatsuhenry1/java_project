@@ -1,11 +1,11 @@
-#Descrição
+# Descrição
 ```
 Este é um sistema de gerenciamento médico desenvolvido com *Java 17, utilizando o framework *Spring Boot e Thymeleaf para a camada de visualização. O sistema tem como objetivo gerenciar médicos,pacientes e consultas.
 
 A aplicação foi implementada para fins acadêmicos, e utiliza um banco de dados H2 em memória, o que facilita a configuração e o uso sem necessidade de instalação de banco de dados externo.
 ```
 
-#Funcionalidades
+# Funcionalidades
 ```
 CRUD de Médicos: Cadastro, edição, listagem e exclusão de médicos.
 CRUD de Pacientes: Cadastro, edição, listagem e exclusão de pacientes.
